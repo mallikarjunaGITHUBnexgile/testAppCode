@@ -1,0 +1,21 @@
+.homePage {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    align-items: center;
+    max-width: 30%;
+    word-wrap: break-word;
+    background-color: rgb(16, 16, 65);
+    color: white;
+    border: 5px solid rgba(0, 0, 0, .125);
+    border-radius: 100px;
+    left: 38%;
+    margin-top: 15%;
+    padding: 30px;
+}
+
+.bt1 {
+    margin: 5px;
+    border-radius: 150px;
+}
