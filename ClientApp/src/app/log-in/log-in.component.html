@@ -1,0 +1,48 @@
+<!-- <form [formGroup]="loginForm">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input type="email" class="form-control" formControlName="userName" id="exampleInputEmail1" aria-describedby="emailHelp">
+      <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label" >Password</label>
+      <input type="password" class="form-control" formControlName="password" id="exampleInputPassword1">
+    </div>
+    <div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id="exampleCheck1">
+      <label class="form-check-label" for="exampleCheck1">Check me out</label>
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="onSubmit()">Submit</button>
+  </form> -->
+<div class="container login">
+    <div class="close" [routerLink]="['/']"><i class="bi bi-x-square-fill"></i></div>
+    <form [formGroup]="loginForm" novalidate>
+
+        <div class="title">Login</div>
+        <div class="input-box underline">
+            <input type="text" ngModel="hello@hel.com" formControlName="userName" placeholder="Enter Your Email" required>
+            <div class="underline"></div>
+        </div>
+        <div *ngIf="loginForm.controls['userName'].invalid && loginForm.controls['userName'].touched" class="warn">
+            <div *ngIf="loginForm.controls['userName'].errors?.required">
+                Enter valid user name.
+            </div>
+        </div>
+        <div class="input-box">
+            <input type="password" ngModel="Hh@1234*" formControlName="password" placeholder="Enter Your Password" required>
+            <div class="underline"></div>
+        </div>
+        <div *ngIf="loginForm.controls['password'].invalid && loginForm.controls['password'].touched" class="warn">
+            <div *ngIf="loginForm.controls['password'].errors?.required">
+                Enter valid password.
+            </div>
+            <div *ngIf="loginForm.controls['password'].errors?.pattern">
+                password not valid.
+            </div>
+        </div>
+        <div class="signUp">Don't have account? <a href="/signUp">SignUp</a></div>
+        <div class="input-box button">
+            <input type="submit" name="" value="Login" (click)="onSubmit()">
+        </div>
+    </form>
+</div>
